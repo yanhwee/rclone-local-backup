@@ -19,14 +19,8 @@ It works by comparing the modification time of the backup folder.
 ## Example
 Setup your remote using `rclone config`.
 ```
-remote="gdrive:"
-local="./gdrive/latest"
-backups="./gdrive/backups"
-backup_name="$(date -Iseconds | tr : -)"
-expiry="+30"
-```
-```
-./backup.sh $remote $local $backups $backup_name $expiry
+rclone sync gdrive: ~/gdrive/latest --backup-dir ~/gdrive/backups/$(date -Iseconds | tr : -)
+find ~/gdrive/backups -depth 1 -mtime +30 -exec rm -r {} +
 ```
 
 ## Setup
