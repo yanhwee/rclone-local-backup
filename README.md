@@ -25,8 +25,8 @@ find ~/gdrive/backups -depth 1 -mtime +30 -exec rm -r {} +
 
 ## Setup
 ### Termux
-#### 1. Termux & Termux-API
-#### 2. Termux packages
-1. rclone: `pkg install rclone`
-2. termux-api: `pkg install termux-api`
-#### 3. Schedule backups
+1. Install Termux & Termux-API
+2. Remember to setup termux storage: `termux-setup-storage`
+3. Install rclone: `pkg install rclone`
+4. Install termux-api to schedule the backup and notify errors: `pkg install termux-api`
+5. Schedule backups: ``
