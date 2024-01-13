@@ -30,4 +30,4 @@ Setup your remote using `rclone config`.
 2. Remember to setup termux storage: `termux-setup-storage`
 3. Install rclone: `pkg install rclone`
 4. Install termux-api to schedule the backup and notify errors: `pkg install termux-api`
-5. Schedule backups: ``
+5. Schedule backups: `termux-job-scheduler --script ~/rclone-local-backup/termux-backup-script.sh --period-ms 900000 --network unmetered --battery-not-low true --persisted true`
