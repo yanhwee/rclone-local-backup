@@ -17,11 +17,11 @@ find $backups -mindepth 1 -maxdepth 1 -mtime +$expiry -exec rm -r {} +
 It works by comparing the modification time of the backup folder.
 
 ## Example
-See `./backup.sh`
 ```
 rclone sync gdrive: ~/gdrive/latest --backup-dir ~/gdrive/backups/$(date -Iseconds | tr : -)
-test -d ~/gdrive/backups && find ~/gdrive/backups -maxdepth 1 -mtime +30 -exec rm -r {} +
+find ~/gdrive/backups -mindepth 1 -maxdepth 1 -mtime +30 -exec rm -r {} +
 ```
+See `./backup.sh`. Do ensure that backup names are kept unique to prevent overwrites.
 
 ## Setup
 Setup your remote using `rclone config`.
