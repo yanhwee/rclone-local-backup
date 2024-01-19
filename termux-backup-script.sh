@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+# termux-job-scheduler requires scripts to have shebang to work
 
 set -ex
 trap 'termux-notification -c "rclone sync error"' ERR
