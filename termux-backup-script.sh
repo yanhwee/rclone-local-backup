@@ -1,3 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
 set -ex
 trap 'termux-notification -c "rclone sync error"' ERR
 
@@ -8,7 +10,7 @@ remote=gdrive:
 local=$storage/gdrive/latest
 backups=$storage/gdrive/backups
 backup_name=$(date -Iseconds | tr : -)
-expiry=1
+expiry=30
 
 export RCLONE_PROGRESS=1 # show progress
 export RCLONE_FAST_LIST=1 # makes it much faster (more memory but fewer transactions)
